@@ -7,12 +7,12 @@ public class BossController : MonoBehaviour
 {
     #region Public Properties
     public float WakeDistance = 8f;
-    public float Speed = 1f;
+    public float Speed = 4f;
     public float SwingDistance = 0.75f;
     public float StabDistance = 1.5f;
-    public float ChargeDistance = 4f;
+    public float ChargeDistance = 3f;
     public int AttackCounter = 0;
-    public int AttacksForCharge = 5;
+    public int AttacksForCharge = 3;
     public bool StabBool = false;
     public bool ChargeReady = false;
     public bool Spinning = false;
@@ -58,15 +58,4 @@ public class BossController : MonoBehaviour
             AttackCounter = 0;
         }
     }
-
-    public void StartSpin()
-    {
-        Spinning = true;
-    }
-
-    public void EndSpin()
-    {
-        Spinning = false;
-    }
-
 }
