@@ -9,12 +9,13 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 4f;
-
+    private Conversation conversation;
     private Rigidbody2D mRb;
     private Vector3 mDirection = Vector3.zero;
     private Animator mAnimator;
     private PlayerInput mPlayerInput;
     private Transform hitBox;
+    private bool isconversation;
 
     private void Start()
     {
@@ -44,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
         {
             // Quieto
             mAnimator.SetBool("IsMoving", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Return) && isconversation == true) {
+            isconversation = false;
+            mPlayerInput.SwitchCurrentActionMap("Conversation");
+            ConversationManager.Instance.StartConversation(conversation);
         }
     }
 
@@ -81,19 +87,23 @@ public class PlayerMovement : MonoBehaviour
         {
             mAnimator.SetTrigger("Attack");
             hitBox.gameObject.SetActive(true);
+            AudioManager.instance.Play("Daño");
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Conversation conversation;
-        if (other.transform.TryGetComponent<Conversation>(out conversation))
-        {
-            mPlayerInput.SwitchCurrentActionMap("Conversation");
-            ConversationManager.Instance.StartConversation(conversation);
-        }
-    }
 
+            if (other.transform.TryGetComponent<Conversation>(out conversation))
+            {
+                isconversation = true;
+            }
+
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isconversation = false;
+    }
     public void DisableHitBox()
     {
         hitBox.gameObject.SetActive(false);
