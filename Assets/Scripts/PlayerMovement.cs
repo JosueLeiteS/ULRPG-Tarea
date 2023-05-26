@@ -56,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
             mPlayerInput.SwitchCurrentActionMap("Conversation");
             ConversationManager.Instance.StartConversation(conversation);
         }
-    }
 
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
         {
