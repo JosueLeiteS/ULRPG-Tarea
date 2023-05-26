@@ -27,6 +27,7 @@ public class Shotgun : MonoBehaviour
     public void FireShotgun(Rigidbody2D rbp, Vector3 p)
     {
         Debug.Log("BOOM");
+        AudioManager.instance.Play("Daño3");
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         // Calcula la dirección de retroceso (en este ejemplo, hacia la izquierda)

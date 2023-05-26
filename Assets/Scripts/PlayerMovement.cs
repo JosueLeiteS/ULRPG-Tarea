@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public int numberOfAttacks;
     private int actualAttack = 1;
     private bool isconversation;
+    public Image image;
+    public Sprite[] numbers;
 
     private void Start()
     {
@@ -63,10 +66,12 @@ public class PlayerMovement : MonoBehaviour
             if (actualAttack < numberOfAttacks)
             {
                 actualAttack++;
+                image.sprite = numbers[actualAttack - 1];
             }
             else
             {
                 actualAttack = 1;
+                image.sprite = numbers[actualAttack - 1];
             }
         }
     }
@@ -108,10 +113,18 @@ public class PlayerMovement : MonoBehaviour
             hitBox.gameObject.SetActive(true);
             AudioManager.instance.Play("Daño");
         }
-        else if(value.isPressed && actualAttack == 2)
+        else if (value.isPressed && actualAttack == 2)
+        {
+            Debug.Log("S");
+            hitBox.gameObject.SetActive(true);
+            mAnimator.SetTrigger("Spin");
+            AudioManager.instance.Play("Daño2");
+        }
+        else if(value.isPressed && actualAttack == 3)
         {
             Debug.Log("S");
             mAnimator.SetTrigger("Shotgun");
+            //AudioManager.instance.Play("Daño3");
         }
     }
 
