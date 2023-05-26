@@ -54,6 +54,15 @@ public class PlayerHealth : MonoBehaviour
             Init();        
         }
     }
+    public void UpdateLife() {
+        int tempIndex = Mathf.Clamp(currentLife, 0, maxLife) / 2;
+        print(tempIndex);
+
+        if (currentLife % 2 == 0)
+            heartImages[tempIndex].GetComponent<Image>().sprite = emptySprite;
+        else if (currentLife % 2 == 1)
+            heartImages[tempIndex].GetComponent<Image>().sprite = halfSprite;
+    }
     public void Respawn() {
         AudioManager.instance.Play("respawn");
     }

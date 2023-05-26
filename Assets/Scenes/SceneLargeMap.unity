@@ -110830,6 +110830,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130224514}
   m_CullTransparentMesh: 1
+--- !u!1001 &1573026243945781851
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1573026243918885472, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_Name
+      value: Vida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.6465
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.1804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573026243918885476, guid: 9b66cee0556663641b991a0989567e66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b66cee0556663641b991a0989567e66, type: 3}
 --- !u!1 &2470553446781837164
 GameObject:
   m_ObjectHideFlags: 0
@@ -111127,7 +111184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
       propertyPath: sounds.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
       propertyPath: bgmSounds.Array.size
@@ -111158,6 +111215,14 @@ PrefabInstance:
       value: Dano2
       objectReference: {fileID: 0}
     - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f1b3909e29c1a3849b75d57785c0ca80, type: 3}
+    - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: Vida
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
       propertyPath: sounds.Array.data[0].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -111170,6 +111235,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 0.3
       objectReference: {fileID: 0}
@@ -111179,6 +111248,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
       propertyPath: sounds.Array.data[2].volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427613260549535857, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
+      propertyPath: sounds.Array.data[3].volume
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8427613260549535858, guid: d3a724b5132cb6f49885ae3eb78d5245, type: 3}
