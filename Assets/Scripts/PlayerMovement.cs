@@ -12,9 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private Conversation conversation;
     private Rigidbody2D mRb;
     private Vector3 mDirection = Vector3.zero;
+    public Vector3 mLastPosition = Vector3.zero;
     private Animator mAnimator;
     private PlayerInput mPlayerInput;
     private Transform hitBox;
+    public int numberOfAttacks;
+    private int actualAttack = 1;
     private bool isconversation;
 
     private void Start()
@@ -41,7 +44,9 @@ public class PlayerMovement : MonoBehaviour
             mAnimator.SetBool("IsMoving", true);
             mAnimator.SetFloat("Horizontal", mDirection.x);
             mAnimator.SetFloat("Vertical", mDirection.y);
-        }else
+            mLastPosition = mDirection;
+        }
+        else
         {
             // Quieto
             mAnimator.SetBool("IsMoving", false);
@@ -50,6 +55,20 @@ public class PlayerMovement : MonoBehaviour
             isconversation = false;
             mPlayerInput.SwitchCurrentActionMap("Conversation");
             ConversationManager.Instance.StartConversation(conversation);
+        }
+    }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+        {
+            Debug.Log(actualAttack);
+            if (actualAttack < numberOfAttacks)
+            {
+                actualAttack++;
+            }
+            else
+            {
+                actualAttack = 1;
+            }
         }
     }
 
@@ -83,11 +102,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnAttack(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && actualAttack == 1)
         {
+            Debug.Log("Attack");
             mAnimator.SetTrigger("Attack");
             hitBox.gameObject.SetActive(true);
             AudioManager.instance.Play("Daño");
+        }
+        else if(value.isPressed && actualAttack == 2)
+        {
+            Debug.Log("S");
+            mAnimator.SetTrigger("Shotgun");
         }
     }
 
